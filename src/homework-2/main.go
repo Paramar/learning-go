@@ -37,7 +37,7 @@ func headerHandler(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("VERSION",envVersoin)
 
 	log.Println("--------Server 端记录访问日志包括客户端 IP，HTTP 返回码，输出到 server 端的标准输出:-------------")
-	statusCode :=200
+	statusCode := http.StatusOK
 	w.WriteHeader(statusCode)
 	remoteAddr := r.RemoteAddr
 	log.Println("客户端 IP: ",remoteAddr,"\n HTTP 返回码: ",statusCode)
